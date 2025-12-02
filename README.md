@@ -19,7 +19,8 @@
 這種生成中間片段的問題被稱為 In-between Generation ，概念出自於動畫繪師常做的 Tweening ，意思是在兩關鍵畫面 (Keyframes) 中間加入銜接補充用的畫面 (In-between) 。在動作生成中， In-between Generation 旨在透過輸入頭尾資料流 (這裡就是頭尾各輸入一支舞蹈動作骨架"影片") 生成能串連頭尾的中間空缺的資料流，近幾年在 Motion 、 Music 相關的研究中均有所突破，但作為結合了音樂與動作資訊的應用領域的 In-between Dance Generation 卻尚未有相關研究。編舞者們若想生成銜接用的舞蹈動作，仍只能將需求以文字或圖片輸入給多模態模型，然後再期待模型能生成有用的動作建議 ── 當然，在沒有輸入頭尾動作影片的情況下往往效果不彰。   
 因此，我們提出了第一個完整的 In-between Dance Generation 架構。分別基於 Transformer 與 DiT (Diffusion Transformer) 兩種架構方向進行實驗，同時嘗試加入 RAG (Retrieval-Augmented Generation) 來強化 few shot training 與 evaluation matrix 方法，生成高品質的 in-between 舞蹈動作骨架。   
 
-/>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   
+
 Transformer 架構基於 ......
 DiT 架構基於 ......
 (細節請見 `SURVEY.md` 與各 `Research` 內容)   
