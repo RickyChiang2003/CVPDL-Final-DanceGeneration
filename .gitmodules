@@ -1,0 +1,3 @@
+[submodule "Research/MDM"]
+	path = Research/MDM
+	url = https://github.com/JunTingLin/motion-diffusion-model

@@ -3,7 +3,7 @@
   <h1 align="center">CVPDL Final Project: In-between Dance Generation</h1>
   <p align="center">
     <a href="">吳克洋</a>,
-    <a href="">林俊傑</a>,
+    <a href="https://github.com/JunTingLin">林俊霆</a>,
     <a href="">陳郁仁</a>,
     <a href="">吳政霖</a>,
     <a href="">江融其</a>
@@ -60,7 +60,7 @@ CVPDL-Final-DanceGeneration/
 
 # Work Assignment
 - 吳克洋：破台、  100%
-- 林俊傑：破台、  100%
+- 林俊霆：破台、  100%
 - 陳郁仁：破台、  100%
 - 吳政霖：破台、  100%
 - 江融其：破房、 -300%
