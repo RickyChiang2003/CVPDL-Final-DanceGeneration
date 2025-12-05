@@ -36,19 +36,27 @@ pip install -r requirements.txt
 
 The motion data used in this project is derived from the **AIST++** dataset (https://google.github.io/aistplusplus_dataset/factsfigures.html). We have already processed and converted the data for this task.
 
-1. Download the processed house dance data (`processed_house.zip`) and the pre-trained model (`best.ckpt`) from Google Drive:
+1. Download the folder `CVPDL-Final` containing the processed house dance data (`processed_house.zip`), the pre-trained model (`best.ckpt`), and the VQ-VAE model (`motion_vqvae.ckpt`) from Google Drive:
    - Link: https://drive.google.com/drive/u/2/folders/1VtziBnQZqa88lQ42RO-AV-Upc2J39Bjz
-   - You can use `gdown` or manually download it.
+   - Use `gdown` to download the folder:
+     ```bash
+     gdown --folder 1VtziBnQZqa88lQ42RO-AV-Upc2J39Bjz
+     ```
 
-2. Unzip the data file and place it in the `data/` directory:
+2. Unzip the data file inside the downloaded folder and place it in the `data/` directory:
 
 ```bash
-unzip processed_house.zip -d data/
+unzip CVPDL-Final/processed_house.zip -d data/
 ```
 
 Ensure the directory structure looks like `data/processed_house/...`.
 
-3. Place the `best.ckpt` file in the `UniMuMo/` directory (or any preferred location).
+3. Move the `best.ckpt` and `motion_vqvae.ckpt` files from the downloaded folder to the `UniMuMo/` directory (or any preferred location):
+
+```bash
+mv CVPDL-Final/best.ckpt UniMuMo/
+mv CVPDL-Final/motion_vqvae.ckpt UniMuMo/
+```
 
 **Note:** Since the data is already processed, you **do not** need to run any preprocessing scripts (like `preprocess_house.py`).
 
@@ -78,7 +86,7 @@ To generate results using a trained checkpoint:
 
 ```bash
 cd UniMuMo
-python inference_house.py --ckpt best.ckpt
+python inference_house.py --ckpt best.ckpt --input_index 0
 ```
 
 (Or point to your training checkpoint: `training_logs/YOUR_LOG_DIR/checkpoints/last.ckpt`)

@@ -197,7 +197,7 @@ def main():
         from unimumo.models.motion_vqvae import MotionVQVAE
         motion_vqvae = MotionVQVAE(**motion_vqvae_conf.model.params, pretrained_music_vqvae=music_vqvae)
         
-        motion_vqvae_ckpt_path = "../motion_vqvae.ckpt"
+        motion_vqvae_ckpt_path = "./motion_vqvae.ckpt"
         try:
             motion_vqvae_ckpt = torch.load(motion_vqvae_ckpt_path, map_location='cpu', weights_only=False)
         except TypeError:
@@ -241,8 +241,8 @@ def main():
         music_motion_lm_config_dummy = OmegaConf.load("configs/train_music_motion.yaml")
         music_motion_lm_config_dummy.model.params.stage = 'train_music_motion'
         
-        motion_mean = np.load("../data/AIST++/Mean.npy")
-        motion_std = np.load("../data/AIST++/Std.npy")
+        motion_mean = np.load("../data/Mean.npy")
+        motion_std = np.load("../data/Std.npy")
         
         model = UniMuMo(
             music_vqvae_config=music_vqvae_config_dummy,

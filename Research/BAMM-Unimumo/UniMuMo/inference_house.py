@@ -20,7 +20,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--ckpt", type=str, required=True, help="Path to the trained checkpoint (LM)")
     parser.add_argument("--save_path", type=str, default="inference_results")
-    parser.add_argument("--data_dir", type=str, default="../data/processed_house/processed_codes")
+    parser.add_argument("--data_dir", type=str, default="../data/processed_house/processed_codes/test")
     parser.add_argument("--input_index", type=int, default=None, help="Index of the sample to infer (optional)")
     args = parser.parse_args()
     
@@ -43,8 +43,8 @@ def main():
         lm_conf.model.params.stage = 'train_music_motion' # Default stage for loading
         
         # Motion Mean/Std
-        motion_mean = np.load("../data/AIST++/Mean.npy")
-        motion_std = np.load("../data/AIST++/Std.npy")
+        motion_mean = np.load("../data/Mean.npy")
+        motion_std = np.load("../data/Std.npy")
         
         # Instantiate UniMuMo
         # We pass the loaded music_vqvae to avoid reloading/config issues
@@ -73,7 +73,7 @@ def main():
         
         # Load Motion VQVAE weights
         print("Loading Motion VQVAE weights...")
-        base_ckpt_path = "/tmp2/b11705045/CVPDL/Final-project/motion_vqvae.ckpt"
+        base_ckpt_path = "./motion_vqvae.ckpt"
         try:
             base_ckpt = torch.load(base_ckpt_path, map_location='cpu', weights_only=False)
         except TypeError:

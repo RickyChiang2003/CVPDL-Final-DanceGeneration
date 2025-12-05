@@ -1,7 +1,7 @@
 *.zip
 *.ckpt
 *.bin
-data/
+data/processed_house
 UniMuMo/log
 local_libs/
 archive
@@ -10,3 +10,5 @@ __pycache__/
 UniMuMo/inference_results
 UniMuMo/training_logs
 UniMuMo/evaluation_results
+UniMuMo/data
+CVPDL-Final/
