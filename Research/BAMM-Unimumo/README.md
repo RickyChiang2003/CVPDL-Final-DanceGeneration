@@ -41,10 +41,10 @@ The motion data used in this project is derived from the **AIST++** dataset (htt
 2. Unzip the data file and place it in the `data/` directory:
 
 ```bash
-unzip AIST++.zip -d data/
+unzip processed_house.zip -d data/
 ```
 
-Ensure the directory structure looks like `data/AIST++/...`.
+Ensure the directory structure looks like `data/processed_house/...`.
 
 3. Place the `best.ckpt` file in the `UniMuMo/` directory (or any preferred location).
 
