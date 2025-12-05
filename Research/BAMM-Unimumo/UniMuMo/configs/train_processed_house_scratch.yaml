@@ -1,0 +1,80 @@
+model:
+  base_learning_rate: 5e-5
+  target: unimumo.models.transformer_model.MusicMotionTransformer
+  params:
+    name: 'facebook/musicgen-small'
+    music_key: 'music_code'
+    motion_key: 'motion_code'
+    text_cond_key: 'text'
+    motion_weight: 1.0
+    length_single_modal: 750
+    feature_frame_rate: 50
+    
+    stage: 'train_motion_inpaint'
+    # mm_ckpt is removed for training from scratch
+    # mm_ckpt: '../music_motino_lm.ckpt'
+
+    monitor: "val/loss"
+
+    generation_params:
+      use_sampling: True
+      temp: 1.
+      top_k: 250
+      top_p: 0.0
+      cfg_coef: 4.0
+      duration: 7.1
+
+    scheduler_config:
+      target: unimumo.lr_scheduler.LambdaLinearScheduler
+      params:
+        warm_up_steps: [ 100 ]
+        cycle_lengths: [ 40000 ]
+        f_start: [ 1.e-6 ]
+        f_max: [ 1. ]
+        f_min: [ 0. ]
+
+    optimization_config:
+      eager_sync: True
+      max_norm: 1.0
+      learning_rate: 5e-5
+      betas: [0.9, 0.95]
+      weight_decay: 0.1
+      eps: 1e-8
+
+    text_model_config:
+      target: unimumo.models.text_generation_model.TextGenerator
+      params:
+        model: 't5-base'
+        max_length: 64
+        context_dim: 1024
+        self_dim: 768
+
+data:
+  target: train.DataModuleFromConfig
+  params:
+    batch_size: 1
+    wrap: True
+    num_workers: 4
+    train:
+      target: unimumo.data.processed_house_dataset.ProcessedHouseDataset
+      params:
+        data_dir: '../data/processed_house/processed_codes/train'
+    validation:
+      target: unimumo.data.processed_house_dataset.ProcessedHouseDataset
+      params:
+        data_dir: '../data/processed_house/processed_codes/val'
+    test:
+      target: unimumo.data.processed_house_dataset.ProcessedHouseDataset
+      params:
+        data_dir: '../data/processed_house/processed_codes/test'
+
+lightning:
+  trainer:
+    benchmark: True
+    devices: 1
+    accelerator: gpu
+    log_every_n_steps: 1
+    default_root_dir: "training_logs"
+    max_epochs: -1 # Or set a reasonable number
+
+

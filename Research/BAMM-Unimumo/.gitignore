@@ -1,0 +1,12 @@
+*.zip
+*.ckpt
+*.bin
+data/
+UniMuMo/log
+local_libs/
+archive
+UniMuMo/archive
+__pycache__/
+UniMuMo/inference_results
+UniMuMo/training_logs
+UniMuMo/evaluation_results
