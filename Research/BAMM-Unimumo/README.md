@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 The motion data used in this project is derived from the **AIST++** dataset (https://google.github.io/aistplusplus_dataset/factsfigures.html). We have already processed and converted the data for this task.
 
-1. Download the processed AIST++ data (`AIST++.zip`) and the pre-trained model (`best.ckpt`) from Google Drive:
+1. Download the processed AIST++ data (`processed_house.zip`) and the pre-trained model (`best.ckpt`) from Google Drive:
    - Link: https://drive.google.com/drive/u/2/folders/1VtziBnQZqa88lQ42RO-AV-Upc2J39Bjz
    - You can use `gdown` or manually download it.
 
