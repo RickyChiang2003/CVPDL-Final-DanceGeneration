@@ -23,18 +23,20 @@ pip install -r requirements.txt
 - `UniMuMo/`: Main codebase.
   - `train.py`: Main training script.
   - `inference_house.py`: Script for inference and visualization.
+  - `evaluate_house.py`: Script for evaluation.
   - `configs/train_processed_house_scratch.yaml`: Configuration for training from scratch.
   - `unimumo/data/processed_house_dataset.py`: Dataset loader for the 24-beat task.
+  - `training_logs/`: Stores training logs and checkpoints.
+  - `inference_results/`: Stores output videos from inference.
+  - `evaluation_results/`: Stores evaluation metrics.
 - `data/`: Data directory.
   - `processed_house/`: Contains processed motion and music data.
-- `training_logs/`: Stores training logs and checkpoints.
-- `inference_results/`: Stores output videos from inference.
 
 ## 3. Data Preparation
 
 The motion data used in this project is derived from the **AIST++** dataset (https://google.github.io/aistplusplus_dataset/factsfigures.html). We have already processed and converted the data for this task.
 
-1. Download the processed AIST++ data (`processed_house.zip`) and the pre-trained model (`best.ckpt`) from Google Drive:
+1. Download the processed house dance data (`processed_house.zip`) and the pre-trained model (`best.ckpt`) from Google Drive:
    - Link: https://drive.google.com/drive/u/2/folders/1VtziBnQZqa88lQ42RO-AV-Upc2J39Bjz
    - You can use `gdown` or manually download it.
 
