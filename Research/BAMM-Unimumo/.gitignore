@@ -1,6 +1,8 @@
 *.zip
 *.ckpt
 *.bin
+*.pth
+*.png
 data/processed_house
 UniMuMo/log
 local_libs/
