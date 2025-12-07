@@ -1,9 +1,9 @@
 # Related Paper Review
-負責人：江融其
+
+## Task
+In-between Dance Generation: 輸入一定長度的頭尾兩段 3D 舞蹈動作骨架，生成中間一定長度的舞蹈動作，且需在生成高品質舞蹈動作的同時自然銜接前後動作。   
 
 ## Background
-本專案想完成的任務是 In-between Dance Generation: 輸入一定長度的頭尾兩段 3D 舞蹈動作骨架，生成中間一定長度的舞蹈動作，且需在生成高品質舞蹈動作的同時自然銜接前後動作。   
-
 靈感來自於舞蹈的編舞。在編舞時，通常首要思考的便是舞蹈動作是否契合音樂、節奏和舞風，接著便是確認前後動作的連貫性。實際編舞者在將自身熟悉的舞蹈動作風格 ── 也就是舞風 ── 帶入音樂中時常會遇到的問題是動作與動作間銜接不順暢，或是在想到前後幾段的動作後難以在它們之間加入能連接兩者的中間動作。這類問題會在一支舞蹈有多名編舞者時更加明顯，因為即便雙方擅長的舞風類別相同，也常面臨動作偏好不一致而難以共編的情況。   
 
 這種生成中間資料片段的任務被稱為 In-between Generation 。概念出自於動畫繪師常做的 Tweening ，意思是在兩關鍵畫面 (Keyframes) 中間加入銜接用的動漫畫面 (In-between) 。 In-between Generation 旨在透過輸入頭尾資料 (這裡就是頭尾各輸入一支動作骨架) 生成能串連頭尾的中間空缺的資料流。    
@@ -16,25 +16,36 @@
 
 因此，我們提出了第一個完整的 In-between Dance Generation 架構。分別基於 Transformer 與 DiT (Diffusion Transformer) 兩種架構方向進行實驗，同時嘗試加入 RAG (Retrieval-Augmented Generation) 來強化 few shot training 與 evaluation matrix 方法，生成高品質的 in-between 舞蹈動作骨架。   
 
-## Transformer
+## Transformer Based Implement
 
 
-## DiT (Diffusion Transformer)
+## DiT (Diffusion Transformer) Based Implement
 
 
+## Related Paper Lists
 
-## Paper Lists
-### Latest Motion / Human Motion Generation Survey
-| Paper Name | Release Time | Link |
+## Main References
+| Title | Venue | Link |
 |:--|:--:|:--:|
-| Human Motion Generation: A Survey | 2023/07 | [Link](https://arxiv.org/abs/2307.10894) |
-| Motion Generation: A Survey of Generative Approaches and Benchmarks | 2025/07 | [Link](https://arxiv.org/abs/2507.05419) |
-| A Survey of Human Motion Video Generation | 2025/09 | [Link](https://arxiv.org/abs/2509.03883) |
-
-### Dataset
-
+| UniMuMo: Unified Text, Music, and Motion Generation | AAAI 2025 | [Link](https://hanyangclarence.github.io/unimumo_demo/) |
+| MDM: Human Motion Diffusion Model | ICLR 2023 | [Link](https://guytevet.github.io/mdm-page/) |
+| BAMM: Bidirectional Autoregressive Motion Model | ECCV 2024 | [Link](https://www.ekkasit.com/BAMM-page/) |
+| MMM: Generative Masked Motion Model | CVPR 2024 | [Link](https://www.ekkasit.com/MMM-page/) |
 
 
-### Related Works
+
+### Datasets
+
+|Dataset name | Venue | Link |
+|:--|:--:|:--:|
+| AIST++ | ICCV 2021 | [Link](https://openaccess.thecvf.com/content/ICCV2021/papers/Li_AI_Choreographer_Music_Conditioned_3D_Dance_Generation_With_AIST_ICCV_2021_paper.pdf) |
+| HumanML3D | CVPR 2022 | [Link](https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_Generating_Diverse_and_Natural_3D_Human_Motions_From_Text_CVPR_2022_paper.pdf) |
+
+### Latest Motion Generation Survey
+| Title | Venue | Link |
+|:--|:--:|:--:|
+| Human Motion Generation: A Survey | TPAMI 2023 | [Link](https://arxiv.org/abs/2307.10894) |
+| Motion Generation: A Survey of Generative Approaches and Benchmarks | Arxiv 2025/07 | [Link](https://arxiv.org/abs/2507.05419) |
+| A Survey of Human Motion Video Generation | Arxiv 2025/09 | [Link](https://arxiv.org/abs/2509.03883) |
 
 
